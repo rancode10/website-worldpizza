@@ -20,3 +20,19 @@ enlaces.addEventListener("click", function() {
     menuResponsive.style.transitionDelay = "0.5s";
     menuResponsive.classList.remove("active");
 }); 
+
+//---------------------------------------------------------------
+// SLIDER DE PRODUCTOS
+var contenedor = document.querySelector('.slider');
+    btnIzquierdo = document.getElementById('btn-izquierda');
+    btnDerecho = document.getElementById('btn-derecha');
+
+    // EVENTO PARA EL BOTON DERECHO
+    btnDerecho.addEventListener("click", function() {
+        contenedor.scrollLeft += contenedor.offsetWidth;
+    });
+
+    // EVENTO PARA EL BOTON IZQUIERDO
+    btnIzquierdo.addEventListener("click", function() {
+        contenedor.scrollLeft -= contenedor.offsetWidth;
+    });
