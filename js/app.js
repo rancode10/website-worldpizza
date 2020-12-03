@@ -36,3 +36,46 @@ var contenedor = document.querySelector('.slider');
     btnIzquierdo.addEventListener("click", function() {
         contenedor.scrollLeft -= contenedor.offsetWidth;
     });
+
+//---------------------------------------------------------------
+// VALIDACION DE FORMULARIO
+var formulario = document.getElementById("formulario");
+
+    function validar(e) {
+        var inputNombre = document.getElementById("nombre"),
+            inputEmail = document.getElementById("email"),
+            inputComentario = document.getElementById("comentarios");
+            alertSuccess = document.getElementById("alertSuccess");
+            alertError = document.getElementById("alertError");
+
+        if (inputNombre.value == 0 || inputEmail.value == 0 || inputComentario.value == 0) {
+            e.preventDefault();
+            alertError.classList.remove("hide");
+            alertError.classList.add("show");
+            
+            setTimeout(function() {
+                alertError.classList.remove("show");
+                alertError.classList.add("hide");
+            }, 2000);
+
+        } else {
+            e.preventDefault();
+            alertSuccess.classList.remove("hide");
+            alertSuccess.classList.add("show");
+            
+            setTimeout(function() {
+                alertSuccess.classList.remove("show");
+                alertSuccess.classList.add("hide");
+            }, 2000);
+
+            inputNombre.value = "";
+            inputEmail.value = "";
+            inputComentario.value = "";
+        }    
+    }
+
+// EVENTOS DEL FORMULARIO
+formulario.addEventListener("submit", validar);
+
+
+    
