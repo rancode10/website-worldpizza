@@ -78,4 +78,38 @@ var formulario = document.getElementById("formulario");
 formulario.addEventListener("submit", validar);
 
 
+// BOTON SCROLL TOP
+var btnTop = document.getElementById("btn-top"),
+    loho = document.getElementById("logo");
+
+
+// DETECTANDO SCROLL EN LA PAGINA WEB
+window.addEventListener("scroll", function() {
+    var scroll = document.documentElement.scrollTop,
+        fullsize = document.documentElement.offsetHeight,
+        sizeVP = document.documentElement.clientHeight;
+
+    if (scroll > 100) {
+        btnTop.classList.add("show")
+    } else {
+        btnTop.classList.remove("show")
+    }
+
+    // MODIFICAR ELEMENTO CUANDO LLEGUE A FINAL DE PAGINA
+    if (fullsize == (scroll + sizeVP)) {
+        btnTop.classList.add("scrollFinal");
+    } else {
+        btnTop.classList.remove("scrollFinal");
+    }
+})
     
+
+// DETECTANDO EVENTO CLICK EN EL BOTON
+btnTop.addEventListener("click", function() {
+    window.scrollTo(0,0);
+})
+
+// DETECTANDO EVENTO CLICK EN EL LOGO
+logo.addEventListener("click", function() {
+    window.scrollTo(0,0);
+})
